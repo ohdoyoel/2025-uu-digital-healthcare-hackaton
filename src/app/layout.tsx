@@ -10,8 +10,9 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "토닥토닥",
-  description: "토닥토닥토닥토닥",
+  title: "ER:ight?",
+  description:
+    "ER:ight? is a platform for healthcare professionals to improve patient care.",
 };
 
 export default function RootLayout({
