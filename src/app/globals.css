@@ -1,6 +1,14 @@
 @import "tailwindcss";
 
 :root {
+  --brand-amber-500: #f59e0b;
+  --brand-amber-700: #b45309;
+  --brand-gradient: linear-gradient(
+    135deg,
+    var(--brand-amber-500),
+    var(--brand-amber-700)
+  );
+  /* --background: var(--brand-gradient); */
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -10,17 +18,24 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-brand-amber-500: var(--brand-amber-500);
+  --color-brand-amber-700: var(--brand-amber-700);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@utility bg-brand-gradient {
+  background: var(--brand-gradient);
+}
+@utility text-brand-500 {
+  color: var(--brand-amber-500);
+}
+@utility border-brand-gradient {
+  border: 1px solid transparent;
+  border-image: var(--brand-gradient) 1;
 }
 
 body {
-  background: var(--background);
+  background: var(--brand-gradient);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
