@@ -1409,11 +1409,9 @@ export default function ChatPage() {
             >
               <div className="flex flex-col items-center gap-4 text-center text-white">
                 <p className="text-4xl font-extrabold md:text-5xl">
-                  간호사를 호출합니다!
+                  간호사를 호출하시겠습니까?
                 </p>
-                <p className="text-base font-medium md:text-lg">
-                  안전을 위해 바로 도움을 요청할게요. 잠시만 기다려주세요.
-                </p>
+                <p className="text-3xl font-bold">예 / 아니오</p>
               </div>
             </div>
           )}
@@ -1490,20 +1488,19 @@ export default function ChatPage() {
                             <p className="whitespace-pre-wrap leading-7">
                               {message.content}
                             </p>
-                          ) : (
+                          ) : message.status === "done" ? (
                             <TextGenerateEffect
                               duration={1}
                               filter={false}
                               words={message.content}
                               className="whitespace-pre-wrap leading-7"
                             />
+                          ) : (
+                            <Loader2 className="h-4 w-4 animate-spin" />
                           )}
-                          {message.status === "pending" && (
-                            <div className="mt-3 flex items-center gap-2 text-xs opacity-80">
-                              <Loader2 className="h-4 w-4 animate-spin" />
-                              답변을 생성하는 중입니다...
-                            </div>
-                          )}
+                          {/* {message.status === "pending" && (
+                            <Loader2 className="h-4 w-4 animate-spin" />
+                          )} */}
                           {message.status === "error" && (
                             <div className="mt-3 text-xs text-rose-500">
                               응답을 불러오지 못했어요. 입력을 확인하고 다시

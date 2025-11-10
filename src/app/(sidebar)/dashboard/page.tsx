@@ -409,7 +409,7 @@ export default function DashboardPage() {
           }}
         >
           <div
-            className={`relative flex h-[80%] w-[80%] max-w-6xl flex-row rounded-2xl bg-white shadow-2xl transition-transform duration-300 ${
+            className={`relative flex h-[90%] w-[90%] max-w-6xl flex-row rounded-2xl bg-white shadow-2xl transition-transform duration-300 ${
               isModalVisible ? "scale-100" : "scale-90"
             }`}
             onClick={(event) => {
